@@ -13,6 +13,12 @@ const skills = ["python", "react", "html", "css", "fastapi", "git"]
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
     <title>{pageTitle}</title>
+    <style>
+      .skill {
+        color: green;
+        font-weight: bold;
+      }
+    </style>
   </head>
   <body>
     <a href="/">Inicio</a>
@@ -40,7 +46,7 @@ const skills = ["python", "react", "html", "css", "fastapi", "git"]
             <li>dos de mis hobbes son: {identity.hobbies[0]}, {identity.hobbies[1]}</li>
         }
         <p>mis habilidades son:</p>
-        {skills.map((skill)=> <li>{skill}</li>)}
+        {skills.map((skill)=> <li class="skill">{skill}</li>)}
     </ul>
   </body>
 </html>
