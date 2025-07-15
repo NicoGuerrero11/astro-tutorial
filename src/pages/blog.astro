@@ -1,19 +1,46 @@
 ---
-
+const pageTitle = "About me";
+const identity = {
+    firstName: "Nicolas",
+    country: "Mexico",
+    occupation: "estudiante de fisica",
+    hobbies: ["musica", "leer", "deportes"]
+}
+const skills = ["python", "react", "html", "css", "fastapi", "git"]
 ---
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>{pageTitle}</title>
+  </head>
+  <body>
+    <a href="/">Inicio</a>
+    <a href="/about/">Sobre mi</a>
+    <a href="/blog/">Blog</a>
+    <h1>{pageTitle}</h1>
+    <h2>... ¡y mi nuevo sitio Astro!</h2>
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Welcome to my Blog!</h1>
-		<h3>this is a blog page...</h3>
-        <a href="/">Index</a>
-		<a href="/about">About</a>
-	</body>
+    <p>Estoy trabajando en el tutorial introductorio de Astro. Esta es la segunda página de mi sitio web, 
+        ¡y es la primera que he construido yo mismo!
+    </p>
+
+    <ul>
+        <li><a href="/posts/post-1">Publicacion 1</a></li>
+        <li><a href="/posts/post-2">Publicacion 2</a></li>
+        <li><a href="/posts/post-3">Publicacion 3</a></li>
+    </ul>
+
+    <h3>datos sobre mi:</h3>
+    <ul>
+        <li>me llamo {identity.firstName} y soy de {identity.country}</li>
+        <li>cuando no estoy programando me dedico a ser {identity.occupation}</li>
+        {
+            identity.hobbies.length >= 2 &&
+            <li>dos de mis hobbes son: {identity.hobbies[0]}, {identity.hobbies[1]}</li>
+        }
+        <p>mis habilidades son:</p>
+        {skills.map((skill)=> <li>{skill}</li>)}
+    </ul>
+  </body>
 </html>
