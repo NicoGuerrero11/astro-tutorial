@@ -1,4 +1,7 @@
 ---
+import Header from '../components/Header.astro';
+import '../styles/globals.css'
+import Footer from '../components/Footer.astro';
 const pageTitle = "About me";
 const identity = {
     firstName: "Nicolas",
@@ -21,9 +24,7 @@ const skills = ["python", "react", "html", "css", "fastapi", "git"]
     </style>
   </head>
   <body>
-    <a href="/">Inicio</a>
-    <a href="/about/">Sobre mi</a>
-    <a href="/blog/">Blog</a>
+    <Header />
     <h1>{pageTitle}</h1>
     <h2>... ¡y mi nuevo sitio Astro!</h2>
 
@@ -48,5 +49,9 @@ const skills = ["python", "react", "html", "css", "fastapi", "git"]
         <p>mis habilidades son:</p>
         {skills.map((skill)=> <li class="skill">{skill}</li>)}
     </ul>
+    <Footer />
+    <script>
+			import "../scripts/menu.js"
+		</script>
   </body>
 </html>

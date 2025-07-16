@@ -1,5 +1,7 @@
 ---
+import Header from '../components/Header.astro'
 import '../styles/globals.css'
+import Footer from '../components/Footer.astro'
 const pageTitle = "About"
 ---
 <html lang="en">
@@ -15,11 +17,14 @@ const pageTitle = "About"
     </style>
   </head>
 	<body>
-        <a href="/">index</a>
-        <a href="/blog">blog</a>
+        <Header />
 		<h1>{pageTitle}</h1>
         <p>This is a simple Astro site.</p>
         <p>Astro is a modern static site generator that allows you to build fast, content-focused websites.</p>
         <p>Learn more at <a href="https://astro.build">astro.build</a></p>
+		<Footer />
+		<script>
+			import "../scripts/menu.js"
+		</script>
 	</body>
 </html>
